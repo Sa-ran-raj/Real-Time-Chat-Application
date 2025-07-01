@@ -10,7 +10,7 @@ import { app,server,io } from "./lib/socket.js";
 
 
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:["http://localhost:5173","https://real-time-chat-application-murex.vercel.app"],
     credentials:true
 }));
 
