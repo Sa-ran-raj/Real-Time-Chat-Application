@@ -16,15 +16,11 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin (like Postman)
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS: " + origin));
-    }
-  },
-  credentials: true, // VERY important for cookies
+  origin: [
+    "http://localhost:5173",
+    "https://real-time-chat-application-rok5mcz0i-sa-ran-rajs-projects.vercel.app"
+  ],
+  credentials: true,
 }));
 dotenv.config();
 
