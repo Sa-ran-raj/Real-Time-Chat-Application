@@ -11,15 +11,19 @@ import { app,server,io } from "./lib/socket.js";
 
 
 const allowedOrigins = [
-  "http://localhost:5173", // local dev
-  "https://real-time-chat-application-rok5mcz0i-sa-ran-rajs-projects.vercel.app" // Vercel frontend
+  "http://localhost:5173",
+  "https://real-time-chat-application-rok5mcz0i-sa-ran-rajs-projects.vercel.app"
 ];
 
+// ✅ Enable CORS
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://real-time-chat-application-rok5mcz0i-sa-ran-rajs-projects.vercel.app"
-  ],
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
+// ✅ Handle preflight requests
+app.options("*", cors({
+  origin: allowedOrigins,
   credentials: true,
 }));
 dotenv.config();
