@@ -9,11 +9,23 @@ import { app,server,io } from "./lib/socket.js";
 
 
 
-app.use(cors({
-    origin:["http://localhost:5173","https://real-time-chat-application-murex.vercel.app"],
-    credentials:true
-}));
 
+const allowedOrigins = [
+  "http://localhost:5173", // local dev
+  "https://real-time-chat-application-rok5mcz0i-sa-ran-rajs-projects.vercel.app" // Vercel frontend
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // allow requests with no origin (like Postman)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS: " + origin));
+    }
+  },
+  credentials: true, // VERY important for cookies
+}));
 dotenv.config();
 
 app.use(cookieParser());
