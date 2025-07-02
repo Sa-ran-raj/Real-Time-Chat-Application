@@ -12,7 +12,8 @@ import { app,server} from "./lib/socket.js";
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://real-time-chat-application-rok5mcz0i-sa-ran-rajs-projects.vercel.app"
+  "https://real-time-chat-application-rok5mcz0i-sa-ran-rajs-projects.vercel.app",
+  "https://real-time-chat-application-murex.vercel.app"
 ];
 
 // ✅ Enable CORS
