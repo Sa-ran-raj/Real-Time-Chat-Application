@@ -1,4 +1,4 @@
-import express from "express";
+
 import authRoutes from "./routes/auth.route.js";
 import { connectDB } from "./lib/db.js";
 import dotenv from "dotenv";
@@ -21,11 +21,7 @@ app.use(cors({
   credentials: true,
 }));
 
-// ✅ Handle preflight requests
-app.options("*", cors({
-  origin: allowedOrigins,
-  credentials: true,
-}));
+
 dotenv.config();
 
 app.use(cookieParser());
