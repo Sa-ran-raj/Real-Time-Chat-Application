@@ -9,7 +9,7 @@ const server=http.createServer(app);
 
 const io=new Server(server,{
     cors:{
-        origin:["https://real-time-chat-application-murex.vercel.app"],
+        origin:["https://gray-wave-0d5b11300.1.azurestaticapps.net"],
         credentials: true
     },
 });
