@@ -20,6 +20,7 @@ const allowedOrigins = [
 // ✅ Enable CORS
 app.use(cors({
   origin: allowedOrigins,
+   methods: ["GET", "POST"],
   credentials: true,
 }));
 
