@@ -14,13 +14,13 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://real-time-chat-application-rok5mcz0i-sa-ran-rajs-projects.vercel.app",
   "https://real-time-chat-application-murex.vercel.app",
-  "https://gray-wave-0d5b11300.1.azurestaticapps.net"
+  "https://orange-smoke-0fe237f00.1.azurestaticapps.net"
 ];
 
 // ✅ Enable CORS
 app.use(cors({
   origin: allowedOrigins,
-   methods: ["GET", "POST"],
+  
   credentials: true,
 }));
 
