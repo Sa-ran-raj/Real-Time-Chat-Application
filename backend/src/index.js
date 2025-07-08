@@ -9,8 +9,6 @@ import { app,server} from "./lib/socket.js";
 
 
 
-const __dirname = path.resolve();
-
 
 const allowedOrigins = [
   "http://localhost:5173",
@@ -27,8 +25,6 @@ app.use(cors({
 }));
 
 
-
-
 dotenv.config();
 
 app.use(cookieParser());
@@ -39,13 +35,6 @@ app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 app.use("/api/auth", authRoutes);
 
 app.use("/api/messages", messageRoutes);
-
-app.use(express.static(path.join(__dirname, 'frontend/build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
-});
-
 
 server.listen(5001,()=>{
     console.log("server running on port 5001");
