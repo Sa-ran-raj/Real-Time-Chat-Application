@@ -9,7 +9,7 @@ const server=http.createServer(app);
 
 const io=new Server(server,{
     cors:{
-        origin:["https://orange-smoke-0fe237f00.1.azurestaticapps.net"],
+        origin:["http://localhost:5173"],
         credentials: true
     },
 });
