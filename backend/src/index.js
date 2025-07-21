@@ -14,7 +14,8 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://real-time-chat-application-rok5mcz0i-sa-ran-rajs-projects.vercel.app",
   "https://real-time-chat-application-murex.vercel.app",
-  "https://orange-smoke-0fe237f00.1.azurestaticapps.net"
+  "https://orange-smoke-0fe237f00.1.azurestaticapps.net",
+  "http://localhost:3000"
 ];
 
 // ✅ Enable CORS
@@ -36,7 +37,9 @@ app.use("/api/auth", authRoutes);
 
 app.use("/api/messages", messageRoutes);
 
-server.listen(5001,()=>{
+
+const PORT = process.env.PORT || 5001;
+server.listen(PORT,()=>{
     console.log("server running on port 5001");
     connectDB();
 });    
